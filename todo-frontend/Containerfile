@@ -25,8 +25,6 @@ LABEL updatedDate="2021-05-19"
 COPY nginx.conf /etc/nginx/
 COPY --from=appbuild /tmp/todo-frontend/build /usr/share/nginx/html
 
-RUN chgrp -R 0 /usr/share/nginx/html && \
-    chmod -R g=u /usr/share/nginx/html
 
 EXPOSE 8080
 USER nginx
